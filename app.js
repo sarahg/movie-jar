@@ -8,13 +8,13 @@ require("dotenv").config();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
+const anylist = new AnyList({
+  email: process.env.ANYLIST_EMAIL,
+  password: process.env.ANYLIST_PASSWORD,
+});
+
 // Handle requests to the index page.
 app.get("/", (req, res) => {
-  const anylist = new AnyList({
-    email: process.env.ANYLIST_EMAIL,
-    password: process.env.ANYLIST_PASSWORD,
-  });
-
   // Authenticate with AnyList.
   anylist.login().then(async () => {
     await anylist.getLists();
