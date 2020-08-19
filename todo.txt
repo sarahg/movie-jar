@@ -1,6 +1,6 @@
-- "Draw another" link
-- Deploy to GCP
-- Domain name
-- Loading animation while searching
+- "Draw another" link 
+(we could just stick all the options in a JSON object 
+to avoid a call to the back-end)
+- Loading animation while searching (load DOM *then* search?)
 - Load movie info from IMDB
 - Filter by category
