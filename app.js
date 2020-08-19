@@ -14,16 +14,10 @@ app.get("/", (req, res) => {
   any.login().then(async () => {
     await any.getLists();
 
-    let movies = [];
-
-    // Get the Movie Jar list.
+    // Get the Movie Jar list and pick a random item from it.
     const movieList = any.getListByName(process.env.ANYLIST_LIST_NAME);
-    for (var i = 0, len = movieList.items.length; i < len; i++) {
-      movies.push(movieList.items[i]._name);
-    }
-
-    // Return a random item from the list.
-    let movie = movies[Math.floor(Math.random() * movies.length)];
+    let movie =
+      movieList.items[Math.floor(Math.random() * movieList.items.length)]._name;
 
     any.teardown();
 
