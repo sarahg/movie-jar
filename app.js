@@ -1,33 +1,41 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const AnyList = require("anylist");
+
 require("dotenv").config();
 
+// Use the EJS template engine and set our static asset path.
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
+// Handle requests to the index page.
 app.get("/", (req, res) => {
-  const AnyList = require("anylist");
-
-  const any = new AnyList({
+  const anylist = new AnyList({
     email: process.env.ANYLIST_EMAIL,
     password: process.env.ANYLIST_PASSWORD,
   });
 
-  any.login().then(async () => {
-    await any.getLists();
+  // Authenticate with AnyList.
+  anylist.login().then(async () => {
+    await anylist.getLists();
 
     // Get the Movie Jar list and pick a random item from it.
-    const movieList = any.getListByName(process.env.ANYLIST_LIST_NAME);
+    const movieList = anylist.getListByName(process.env.ANYLIST_LIST_NAME);
     let movie =
       movieList.items[Math.floor(Math.random() * movieList.items.length)]._name;
 
-    any.teardown();
+    // Close the WebSocket.
+    anylist.teardown();
 
     res.render("index", { movie: movie });
   });
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+// Start the server.
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
+  console.log("Press Ctrl+C to quit.");
 });
+
+module.exports = app;
