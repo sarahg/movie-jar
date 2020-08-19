@@ -1,4 +1,3 @@
-- Tailwind CSS basic styles
 - Deploy to GCP
 - Domain name
 - Loading animation while searching

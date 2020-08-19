@@ -10,10 +10,13 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "tailwindcss": "^1.7.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "yarn build:css && nodemon app.js",
+    "build:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css"
   },
   "repository": {
     "type": "git",

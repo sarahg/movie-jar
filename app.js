@@ -4,6 +4,7 @@ const port = 3000;
 require("dotenv").config();
 
 app.set("view engine", "ejs");
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
   const AnyList = require("anylist");
