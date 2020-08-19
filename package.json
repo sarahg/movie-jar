@@ -1,0 +1,27 @@
+{
+  "name": "movie-jar",
+  "version": "1.0.0",
+  "description": "Grab random items from an AnyList. We use this to choose what movie to watch.",
+  "main": "app.js",
+  "dependencies": {
+    "anylist": "^0.1.3",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarahg/movie-jar.git"
+  },
+  "keywords": [
+    "anylist"
+  ],
+  "author": "Sarah German",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sarahg/movie-jar/issues"
+  },
+  "homepage": "https://github.com/sarahg/movie-jar#readme"
+}
