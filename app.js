@@ -3,6 +3,8 @@ const app = express();
 const port = 3000;
 require("dotenv").config();
 
+app.set("view engine", "ejs");
+
 app.get("/", (req, res) => {
   const AnyList = require("anylist");
 
@@ -21,7 +23,7 @@ app.get("/", (req, res) => {
 
     any.teardown();
 
-    res.send(`Random movie: ${movie}`);
+    res.render("index", { movie: movie });
   });
 });
 

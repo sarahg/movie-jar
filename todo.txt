@@ -1,7 +1,6 @@
-- Env vars for login info
-- HTML template/UI
 - Tailwind CSS basic styles
 - Deploy to GCP
 - Domain name
+- Loading animation while searching
 - Load movie info from IMDB
 - Filter by category
