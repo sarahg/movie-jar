@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
     any.teardown();
   });
 
-  res.send("Hello World!!!!");
+  res.send("Hello World reloaded!!!");
 });
 
 app.listen(port, () => {
