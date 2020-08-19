@@ -1,3 +1,4 @@
+- "Draw another" link
 - Deploy to GCP
 - Domain name
 - Loading animation while searching

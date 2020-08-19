@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Movie Jar</title>
-    <meta name="description" content="Pick a movie to watch tonight.">
+    <meta name="description" content="Pick a movie to watch tonight. Curated by your friends at Cat Party Brewing.">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif;">
@@ -18,14 +22,11 @@
             <h1 class="w-full my-2 text-5xl font-black leading-tight text-center text-gray-800">
                 🍶 Movie Jar
             </h1>
-            <div class="w-full mb-4">
-                <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-            </div>
 
             <div class="flex flex-wrap">
                 <div class="w-5/6 sm:w-1/2 p-6">
                     <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-                        Drawing a movie from the Cat Party Brewing movie jar...
+                        Drawing a movie from the<br> Cat Party Brewing movie jar...
                     </h3>
                     <p class="text-gray-600 text-2xl mb-8">
                         🎉 <%= movie %>
@@ -35,6 +36,12 @@
                     <img src="images/undraw_chilling_8tii.svg" />
                 </div>
             </div>
+            <p class="w-full p-6">
+                <a href="https://github.com/sarahg/movie-jar">💾 View source on GitHub</a>
+                <br />&copy; 2020 <a href="https://sarahgerman.com">Sarah German</a>
+            </p>
+        </div>
+    </section>
 
 </body>
 
