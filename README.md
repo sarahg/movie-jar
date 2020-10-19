@@ -12,4 +12,4 @@ Make a copy of `.env.sample` called `.env` and fill in your AnyList credentials.
 
 Set `NODE_ENV` in the `.env` file to either "development" or "production" to modify CSS builds (the development builds include all of Tailwind CSS; production builds remove unused styles).
 
-Run `nodemon app.js` and view the app at `http://localhost:3000` in your browser.
+Run `npm run dev` and view the app at `http://localhost:8080` in your browser.

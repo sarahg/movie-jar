@@ -1,5 +1,5 @@
-- "Draw another" link
 - Seasonal varieties (Halloween, Holiday, etc)
+- Perform search on the client-side (pass full list to DOM as JSON)
 - Loading animation while searching
 - Load movie info from IMDB
 - Filter by category
