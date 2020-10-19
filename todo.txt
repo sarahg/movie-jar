@@ -1,6 +1,5 @@
 - "Draw another" link
-- Deploy to GCP
-- Domain name
+- Seasonal varieties (Halloween, Holiday, etc)
 - Loading animation while searching
 - Load movie info from IMDB
 - Filter by category
