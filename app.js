@@ -17,7 +17,8 @@ const anylist = new AnyList({
 app.get("/", (req, res) => {
   anylist.login().then(async () => {
     await anylist.getLists();
-    res.render("index", { movie: getMovie(anylist, "Movie Jar") });
+    console.log(req);
+    res.render("index", { icon: "🍿", movie: getMovie(anylist, "Movie Jar") });
   });
 });
 
@@ -25,13 +26,21 @@ app.get("/", (req, res) => {
 app.get("/halloween", (req, res) => {
   anylist.login().then(async () => {
     await anylist.getLists();
-    res.render("index", { movie: getMovie(anylist, "Movie Jar - Halloween") });
+    console.log(req.originalUrl);
+
+    res.render("index", {
+      icon: "🎃",
+      movie: getMovie(anylist, "Movie Jar - Halloween"),
+    });
   });
 });
 app.get("/christmas", (req, res) => {
   anylist.login().then(async () => {
     await anylist.getLists();
-    res.render("index", { movie: getMovie(anylist, "Movie Jar - Christmas") });
+    res.render("index", {
+      icon: "🎄",
+      movie: getMovie(anylist, "Movie Jar - Christmas"),
+    });
   });
 });
 
