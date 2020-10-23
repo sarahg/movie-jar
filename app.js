@@ -15,21 +15,53 @@ const anylist = new AnyList({
 
 // Handle requests to the index page.
 app.get("/", (req, res) => {
-  // Authenticate with AnyList.
   anylist.login().then(async () => {
     await anylist.getLists();
-
-    // Get the Movie Jar list and pick a random item from it.
-    const movieList = anylist.getListByName(process.env.ANYLIST_LIST_NAME);
-    let movie =
-      movieList.items[Math.floor(Math.random() * movieList.items.length)]._name;
-
-    // Close the WebSocket.
-    anylist.teardown();
-
-    res.render("index", { movie: movie });
+    console.log(req);
+    res.render("index", { icon: "🍿", movie: getMovie(anylist, "Movie Jar") });
   });
 });
+
+// Seasonal pages.
+app.get("/halloween", (req, res) => {
+  anylist.login().then(async () => {
+    await anylist.getLists();
+    console.log(req.originalUrl);
+
+    res.render("index", {
+      icon: "🎃",
+      movie: getMovie(anylist, "Movie Jar - Halloween"),
+    });
+  });
+});
+app.get("/christmas", (req, res) => {
+  anylist.login().then(async () => {
+    await anylist.getLists();
+    res.render("index", {
+      icon: "🎄",
+      movie: getMovie(anylist, "Movie Jar - Christmas"),
+    });
+  });
+});
+
+/**
+ * Pick a random item from an AnyList.
+ * @param {*} anylist
+ * @param {*} list_name
+ */
+const getMovie = (anylist, list_name) => {
+  const movieList = anylist.getListByName(list_name);
+  anylist.teardown();
+
+  let movie = "No movies found!";
+
+  if (movieList) {
+    movie =
+      movieList.items[Math.floor(Math.random() * movieList.items.length)]._name;
+  }
+
+  return movie;
+};
 
 // Start the server.
 const PORT = process.env.PORT || 8080;

@@ -1,5 +1,5 @@
-- Seasonal varieties (Halloween, Holiday, etc)
 - Perform search on the client-side (pass full list to DOM as JSON)
 - Loading animation while searching
 - Load movie info from IMDB
 - Filter by category
+- Deploy on PR merge with GitHub Actions ([Link](https://github.com/GoogleCloudPlatform/github-actions/tree/master/appengine-deploy))
