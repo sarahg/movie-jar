@@ -18,3 +18,9 @@ Run `npm run dev` and view the app at `http://localhost:8080` in your browser.
 
 We're using Tailwind CSS for styling. If you edit markup to include a new class for styling,
 run `npm run build:css` to rebuild the stylesheet. (There is probably a nicer way to do this.)
+
+## Deploy
+
+1. Make sure you're logged into the right Google account: `gcloud auth list`
+2. Select this project: `gcloud config set project movie-jar`
+3. Push the app up to GCP: `gcloud app deploy`
